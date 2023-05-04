@@ -9,13 +9,13 @@ RUN a2enmod expires
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 RUN apt-get install -y mc vim nano
 
-COPY ./main.conf /etc/apache2/sites-enabaled/main.conf
-COPY ./Blind-xss.conf /etc/apache2/sites-enabaled/Blind-xss.conf
-COPY ./Blind-ssrf.conf /etc/apache2/sites-enabaled/Blind-ssrf.conf
+COPY ./Configs/main.conf /etc/apache2/sites-enabaled/main.conf
+COPY ./Configs/Blind-xss.conf /etc/apache2/sites-enabaled/Blind-xss.conf
+COPY ./Configs/Blind-ssrf.conf /etc/apache2/sites-enabaled/Blind-ssrf.conf
 
-COPY ./index-ssrf.php /var/www/blindssrf/index.php
-COPY ./index-xss.php /var/www/blindxss/index.php
-COPY ./r.php /var/www/main/r.php
+COPY ./php/index-ssrf.php /var/www/blindssrf/index.php
+COPY ./php/index-xss.php /var/www/blindxss/index.php
+COPY ./php/r.php /var/www/main/r.php
 
 
 CMD ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]
