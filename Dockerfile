@@ -7,11 +7,11 @@ RUN apt-get install -y php-curl
 RUN a2enmod headers
 RUN a2enmod expires
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
-RUN apt-get install -y mc vim nano
+RUN apt-get install -y nano
 
-COPY ./Configs/main.conf /etc/apache2/sites-enabaled/main.conf
-COPY ./Configs/Blind-xss.conf /etc/apache2/sites-enabaled/Blind-xss.conf
-COPY ./Configs/Blind-ssrf.conf /etc/apache2/sites-enabaled/Blind-ssrf.conf
+COPY ./_config/main.conf /etc/apache2/sites-enabaled/main.conf
+COPY ./_config/Blind-xss.conf /etc/apache2/sites-enabaled/Blind-xss.conf
+COPY ./_config/Blind-ssrf.conf /etc/apache2/sites-enabaled/Blind-ssrf.conf
 
 COPY ./php/index-ssrf.php /var/www/blindssrf/index.php
 COPY ./php/index-xss.php /var/www/blindxss/index.php

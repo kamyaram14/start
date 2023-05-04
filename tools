@@ -1,0 +1,22 @@
+wget https://go.dev/dl/go1.20.4.linux-amd64.tar.gz
+rm -rf /usr/local/go && tar -C /usr/local -xzf go1.20.4.linux-amd64.tar.gz
+export PATH=$PATH:/usr/local/go/bin
+export GOROOT=/usr/local/go
+go version
+go install github.com/projectdiscovery/notify/cmd/notify@latest &> /dev/null
+go install github.com/projectdiscovery/mapcidr/cmd/mapcidr@latest &> /dev/null
+go install github.com/ffuf/ffuf/v2@latest &> /dev/null
+go install github.com/tomnomnom/unfurl@latest &> /dev/null
+go install github.com/projectdiscovery/httpx/cmd/httpx@latest &> /dev/null
+go install github.com/bp0lr/gauplus@latest &> /dev/null
+go install github.com/projectdiscovery/katana/cmd/katana@latest &> /dev/null
+go install github.com/projectdiscovery/subfinder/v2/cmd/subfinder@latest &> /dev/null
+go install github.com/projectdiscovery/dnsx/cmd/dnsx@latest &> /dev/null
+go install github.com/projectdiscovery/shuffledns/cmd/shuffledns@latest &> /dev/null
+go install github.com/tomnomnom/anew@latest &> /dev/null
+go install github.com/projectdiscovery/nuclei/v2/cmd/nuclei@latest &> /dev/null
+#----
+apt install vim curl zsh git net-tools tmux build-essential make python3-apt python3-distutils libssl-dev curl zsh git vim jq
+curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py; python3 get-pip.py
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
