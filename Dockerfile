@@ -13,9 +13,9 @@ COPY ./main.conf /etc/apache2/sites-enabaled/main.conf
 COPY ./Blind-xss.conf /etc/apache2/sites-enabaled/Blind-xss.conf
 COPY ./Blind-ssrf.conf /etc/apache2/sites-enabaled/Blind-ssrf.conf
 
-COPY ./index-ssrf.php- /var/www/blindssrf/index.php
-COPY ./index-xss.php- /var/www/blindxss/index.php
-COPY ./r.php- /var/www/main/r.php
+COPY ./index-ssrf.php /var/www/blindssrf/index.php
+COPY ./index-xss.php /var/www/blindxss/index.php
+COPY ./r.php /var/www/main/r.php
 
 
 CMD ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]
