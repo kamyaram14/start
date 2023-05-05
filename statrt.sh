@@ -1,11 +1,11 @@
 #!/bin/bash
 sudo apt update &> /dev/null && sudo apt upgrade &> /dev/null
-sudo ufw allow 'ssh' 
-sudo ufw enable
+sudo ufw allow 'ssh' &> /dev/null
+sudo ufw enable &> /dev/null
 sudo ufw status
-sudo apt install docker
-sudo apt install apt-transport-https ca-certificates curl software-properties-common &> /dev/null
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - &> /dev/null
+sudo apt install docker 
+sudo apt install apt-transport-https ca-certificates curl software-properties-common 
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable" &> /dev/null
 sudo apt update &> /dev/null
 apt-cache policy docker-ce &> /dev/null
