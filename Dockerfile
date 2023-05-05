@@ -2,8 +2,7 @@ FROM php:8-apache
 RUN mv "$PHP_INI_DIR/php.ini-development" "$PHP_INI_DIR/php.ini"
 RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf
 RUN apt-get update && apt-get upgrade
-RUN apt-get update -y && apt-get install -y libpng-dev libjpeg-dev libpq-dev
-RUN apt-get install -y php-curl
+RUN apt-get update -y 
 RUN a2enmod headers
 RUN a2enmod expires
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
