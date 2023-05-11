@@ -11,3 +11,6 @@ services:
     ports:
       - "80:80"
       - "443:443"
+    environment:
+      - VIRTUAL_HOST=kamyarkalhor.ir
+      - LETSENCRYPT_HOST=kamyarkalhor.ir

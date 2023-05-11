@@ -10,6 +10,7 @@ sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubun
 sudo apt update
 apt-cache policy docker-ce
 sudo apt install docker-ce
+sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout ./apache-selfsigned.key -out ./apache-selfsigned.crt
 sudo docker image build -t kamyarkalhor.ir .
 sudo chown -R $USER:$USER /var/www
 sudo cp ./php/index-ssrf.php /var/www/html/blindssrf/index.php
