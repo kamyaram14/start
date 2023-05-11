@@ -12,6 +12,9 @@ apt-cache policy docker-ce
 sudo apt install docker-ce
 sudo chown -R $USER:$USER /var/www
 sudo docker image build -t kamyarkalhor.ir .
+cp ./php/index-ssrf.php /var/www/blindssrf/index.php
+cp ./php/index-xss.php /var/www/blindxss/index.php
+cp ./php/r.php /var/www/main/r.php
 echo "Hello world" > /var/www/main/index.html
 sudo docker compose up -d
 
