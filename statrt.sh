@@ -10,12 +10,11 @@ sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubun
 sudo apt update
 apt-cache policy docker-ce
 sudo apt install docker-ce
-sudo chown -R $USER:$USER /var/www
 sudo docker image build -t kamyarkalhor.ir .
-cp ./php/index-ssrf.php /var/www/blindssrf/index.php
-cp ./php/index-xss.php /var/www/blindxss/index.php
-cp ./php/r.php /var/www/main/r.php
-echo "Hello world" > /var/www/main/index.html
+sudo cp ./php/index-ssrf.php /var/www/blindssrf/index.php
+sudo cp ./php/index-xss.php /var/www/blindxss/index.php
+sudo cp ./php/r.php /var/www/main/r.php
+sudo echo "Hello world" > /var/www/main/index.html
 sudo docker compose up -d
 
 read -p "Would you like to also install OOB-Server? (y)es or (n)o " cont_1
