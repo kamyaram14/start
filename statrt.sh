@@ -12,6 +12,7 @@ apt-cache policy docker-ce
 sudo apt install docker-ce
 sudo chown -R $USER:$USER /var/www
 sudo docker image build -t kamyarkalhor.ir .
+echo "Hello world" > /var/www/main/index.html
 sudo docker compose up -d
 
 read -p "Would you like to also install OOB-Server? (y)es or (n)o " cont_1
