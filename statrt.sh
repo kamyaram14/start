@@ -15,7 +15,7 @@ sudo chown -R $USER:$USER /var/www
 sudo cp ./php/index-ssrf.php /var/www/html/blindssrf/index.php
 sudo cp ./php/index-xss.php /var/www/html/blindxss/index.php
 sudo cp ./php/r.php /var/www/html/blindssrf/r.php
-sudo echo "Hello world" > /var/www/main/html/index.html
+sudo echo "Hello world" > /var/www/html/main/index.html
 sudo docker compose up -d
 
 read -p "Would you like to also install OOB-Server? (y)es or (n)o " cont_1
