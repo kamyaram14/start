@@ -5,6 +5,7 @@ RUN apt-get update && apt-get upgrade
 RUN apt-get update -y 
 RUN a2enmod headers
 RUN a2enmod expires
+RUN a2dissite 000-default.conf
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 RUN apt-get install -y nano
 
