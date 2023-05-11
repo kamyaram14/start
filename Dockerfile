@@ -8,9 +8,9 @@ RUN a2enmod expires
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 RUN apt-get install -y nano
 
-COPY ./_config/main.conf /etc/apache2/sites-enabaled/main.conf
-COPY ./_config/Blind-xss.conf /etc/apache2/sites-enabaled/Blind-xss.conf
-COPY ./_config/Blind-ssrf.conf /etc/apache2/sites-enabaled/Blind-ssrf.conf
+COPY ./_config/main.conf /etc/apache2/sites-enabled/main.conf
+COPY ./_config/Blind-xss.conf /etc/apache2/sites-enabled/Blind-xss.conf
+COPY ./_config/Blind-ssrf.conf /etc/apache2/sites-enabled/Blind-ssrf.conf
 
 COPY ./php/index-ssrf.php /var/www/blindssrf/index.php
 COPY ./php/index-xss.php /var/www/blindxss/index.php
