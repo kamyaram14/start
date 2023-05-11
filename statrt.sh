@@ -13,7 +13,7 @@ sudo apt install docker-ce
 sudo docker image build -t kamyarkalhor.ir .
 sudo cp ./php/index-ssrf.php /var/www/blindssrf/index.php
 sudo cp ./php/index-xss.php /var/www/blindxss/index.php
-sudo cp ./php/r.php /var/www/main/r.php
+sudo cp ./php/r.php /var/www/blindssrf/r.php
 sudo echo "Hello world" > /var/www/main/index.html
 sudo docker compose up -d
 
