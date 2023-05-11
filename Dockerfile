@@ -12,8 +12,6 @@ RUN apt-get install -y nano
 COPY ./_config/main.conf /etc/apache2/sites-enabled/main.conf
 COPY ./_config/Blind-xss.conf /etc/apache2/sites-enabled/Blind-xss.conf
 COPY ./_config/Blind-ssrf.conf /etc/apache2/sites-enabled/Blind-ssrf.conf
-COPY ./apache-selfsigned.crt /etc/ssl/certs/apache-docker-selfsigned.crt
-COPY ./apache-selfsigned.key /etc/ssl/private/apache-docker-selfsigned.key
 
 CMD ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]
 EXPOSE 80
