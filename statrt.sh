@@ -11,10 +11,11 @@ sudo apt update
 apt-cache policy docker-ce
 sudo apt install docker-ce
 sudo docker image build -t kamyarkalhor.ir .
-sudo cp ./php/index-ssrf.php /var/www/blindssrf/index.php
-sudo cp ./php/index-xss.php /var/www/blindxss/index.php
-sudo cp ./php/r.php /var/www/blindssrf/r.php
-sudo echo "Hello world" > /var/www/main/index.html
+sudo chown -R $USER:$USER /var/www
+sudo cp ./php/index-ssrf.php /var/www/html/blindssrf/index.php
+sudo cp ./php/index-xss.php /var/www/html/blindxss/index.php
+sudo cp ./php/r.php /var/www/html/blindssrf/r.php
+sudo echo "Hello world" > /var/www/main/html/index.html
 sudo docker compose up -d
 
 read -p "Would you like to also install OOB-Server? (y)es or (n)o " cont_1

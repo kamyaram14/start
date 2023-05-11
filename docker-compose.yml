@@ -5,9 +5,9 @@ services:
     image: kamyarkalhor.ir
     container_name: kamyarkalhor.ir
     volumes:
-      - /var/www/main:/var/www/main
-      - /var/www/blindxss:/var/www/blindxss
-      - /var/www/blindssrf:/var/www/blindssrf
+      - /var/www/html/main:/var/www/html/main
+      - /var/www/html/blindxss:/var/www/html/blindxss
+      - /var/www/html/blindssrf:/var/www/html/blindssrf
     ports:
       - "80:80"
       - "443:443"
